@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        .container {
+            width:50%;
+            margin: 2% 25%;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Canvas Element</h1>
+        <h2>My favourite car (using img element)</h2>
+        <img id = "image" style = "border: 5px solid gray;" src="./tesla.jpg" alt="car image"><br>
+        <h2>Elements in canvas</h2> <hr>
+        <h2>Line</h2>
+        <canvas id="draw-line" width="400" height = "200" style="border: 1px solid black;"></canvas><br> <hr>
+        <h2>Text</h2>
+        <canvas id="fill-text" width="400" height = "200" style="border: 1px solid black;"></canvas><br> <hr>
+        <h2>Text with stroke</h2>
+        <canvas id="fill-text-stroke" width="400" height = "200" style="border: 1px solid black;"></canvas><br> <hr>
+        <h2>Circle</h2>
+        <canvas id="draw-circle" width="400" height = "200" style="border: 1px solid black;"></canvas><br> <hr>
+        <!-- <h2>Image</h2>
+        <canvas id="draw-image" width="600" height = "400" style="border: 1px solid black;"></canvas><br> -->
+        <h2>Linear Gradient</h2>
+        <canvas id="linear-gradient" width = "400" height = "200" style="border: 1px solid black;"></canvas> <br> <hr>
+        <h2>Radial Gradient</h2>
+        <canvas id="radial-gradient" width = "400" height = "200" style="border: 1px solid black;"></canvas> <br><hr>
+        <h2>Stroked Coloured Text</h2>
+        <canvas id="coloured-stroked-text" width = "400" height = "200" style="border: 1px solid black;"></canvas>
+        
+    </div>
+
+    <script>
+        let containerForLine = document.getElementById("draw-line");
+        let containerForText = document.getElementById("fill-text");
+        let containerForStokeText = document.getElementById("fill-text-stroke");
+        let containerForCircle = document.getElementById("draw-circle");
+        // let containerForImage = document.getElementById("draw-image");
+        let containerForLinearGradient = document.getElementById("linear-gradient");
+        let containerForRadialGradient = document.getElementById("radial-gradient");
+        let containerForStrokedColouredText = document.getElementById("coloured-stroked-text");
+
+        let brushForLine = containerForLine.getContext("2d");
+        let brushForText = containerForText.getContext("2d");
+        let brushForStrokeText = containerForStokeText.getContext("2d");
+        let brushForCircle = containerForCircle.getContext("2d");
+        // let brushForImage = containerForImage.getContext("2d");
+        let brushForLinearGradient = containerForLinearGradient.getContext("2d");
+        let brushForRadialGradient = containerForRadialGradient.getContext("2d");
+        let brushforColouredStrokedText = containerForStrokedColouredText.getContext("2d");
+
+        // First Box -Drawing Lines..
+        brushForLine.moveTo(0,0);
+        brushForLine.lineTo(400,200);
+        brushForLine.stroke();
+        brushForLine.moveTo(400,0);
+        brushForLine.lineTo(0,200);
+        brushForLine.stroke();
+        
+        // Second Box -Filling Text
+        brushForText.font = "40px monospace";
+        brushForText.fillText("Soorya J",110,100);
+
+        // Third Box -stroke text
+        brushForStrokeText.font = "50px monospace";
+        brushForStrokeText.strokeText("Soorya J",110,110);
+
+        // Fourth Box -circle
+        brushForCircle.beginPath();
+        brushForCircle.arc(200,100,80,0,2*Math.PI);
+        brushForCircle.stroke();
+
+        // Fifth Box -Image
+        // var image = document.getElementById("image");
+        // brushForImage.drawImage(image,0,0);
+
+        // Linear Gradient
+        var linearGradient = brushForLinearGradient.createLinearGradient(0,0,400,0);
+        linearGradient.addColorStop(0,"red");
+        linearGradient.addColorStop(1,"blue");
+
+        brushForLinearGradient.fillStyle = linearGradient;
+        brushForLinearGradient.fillRect(0,0,400,200);
+
+        // circular or radial gradient
+        // todo : want to learn deep aboout this
+
+        let radialGradient = brushForRadialGradient.createRadialGradient(200,100,10,200,120,80);
+        radialGradient.addColorStop(0,"red");
+        radialGradient.addColorStop(1,"yellow");
+
+        brushForRadialGradient.fillStyle = radialGradient;
+        brushForRadialGradient.fillRect(0,0,400,200);
+
+        // Stroked Coloured Text
+        brushforColouredStrokedText.font = "50px monospace";
+
+        let textGradient = brushforColouredStrokedText.createLinearGradient(0,0,containerForStrokedColouredText.width,0);
+
+        textGradient.addColorStop("0","red");
+        textGradient.addColorStop('0.5',"green");
+        textGradient.addColorStop("1","blue");
+
+        brushforColouredStrokedText.strokeStyle = textGradient;
+        brushforColouredStrokedText.strokeText("Soorya J",100,100);
+
+
+    </script>
+</body>
+</html>

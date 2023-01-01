@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+        }
+        form {
+            width: 40%;
+            margin: 0 30%;
+        }
+        fieldset {
+            padding: 5px 10px;
+
+        }
+        label {
+            padding: 5px 0;
+        }
+        legend {
+            font-family: monospace;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        #submit {
+            text-align: center;
+        }
+
+        input{
+            width: 50%;
+            font-size: 17px;
+        }
+        input[name = "courses"], input[name = "laptop"]  {
+            width: 2%;
+            margin-left: 40px;
+        }
+
+        textarea{
+            width: 90%;
+            height : 100px;
+        }
+
+        input[type = "submit"] {
+            width: 20%;
+            margin : 2% 40%;
+            font-size: 20px;
+            font-family: monospace;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        #submit:hover {
+            cursor: pointer;
+        }
+        h4 {
+            font-weight: normal;
+        }
+        .buttons {
+            font-size: 15px;
+        }
+        input:focus{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" target ="_blank">
+        <fieldset>
+            <legend>Student Details Form</legend>
+            <label for="name">Name</label> <br>
+            <input type="text" id = "name" name = "name" placeholder="enter name" required>
+            <br>
+            <label for="rollno">Roll no.</label> <br>
+            <input type="text" name = "rollno" id = "rollno" placeholder="enter roll number" required>
+            <br>
+            <label for="department">Department</label> <br>
+            <select name="department" id="department" required>
+                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                <option value="Computer Science Engineering">Computer Science Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+            </select>
+            <br>
+            <label for="email">Email</label><br>
+            <input type="email" name = "email" id ="email" placeholder="enter email" required>
+            <br>
+            <label for="DOB"><abbr title="Date of Birth">DOB</abbr></label>
+            <br>
+            <input type="date" id = "DOB" name = "DOB" placeholder="birth date">
+            <br>
+            <label for="address">Address</label> <br>
+            <textarea name="address" id="address" placeholder = "enter your address"></textarea>
+            <br>
+            <h4>Enrolled Courses</h4>
+            <input type="checkbox" name = "courses" id = "aws">
+            <label for="aws" class = "buttons">AWS Certification</label>
+            <br>
+            <input type="checkbox" name = "courses" id = "pcb">
+            <label for="pcb" class = "buttons">PCB Design</label>
+            <br>
+            <input type="checkbox" name = "courses" id = "autocad">
+            <label for="autocad" class = "buttons">AutoCad</label>
+            <br>
+            <input type="checkbox" name = "courses" id = "cybersecurity">
+            <label for="cybersecurity" class = "buttons">Cyber Security</label>
+
+            <h4>Do you have a Laptop/Personal Computer ?</h4>
+            <input type="radio" name= "laptop" id="yes">
+            <label for="yes" class = "buttons">Yes</label>
+            <br>
+            <input type="radio" name = "laptop" id = "no">
+            <label for="no" class = "buttons">No</label>
+
+            <h4>Comments</h4>
+            <textarea name="comments" id="comments" placeholder="any comments..please type here"></textarea>
+            <br>
+            <input type="submit" id ="submit">
+        </fieldset>   
+    </form>
+</body>
+</html>

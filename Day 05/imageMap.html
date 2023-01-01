@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image maps</title>
+    <style>
+        .container{
+            width: 50%;
+            margin: 2% 20%;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Maps</h1>
+        <h2>Click on the Logo's to learn HTMl, CSS and Javascript</h2>
+        <img src="./frontEndTechlogos.jfif" alt="" usemap ="#imagemap">
+        <map name="imagemap">
+            <!-- <area alt="HtML logo" title="HTML logo" href="https://www.w3schools.com" coords="122,425,411,421,384,721,265,756,148,725" shape="poly"> -->
+            <area target="_blank" alt="html course" title="Click and Learn HTML" href="https://www.w3schools.com/html/" coords="122,425,411,421,384,721,265,756,148,725" shape="poly">
+            <area target="_blank" alt="" title="Click and Learn Javascript " href="https://www.w3schools.com/js/" coords="453,361,748,364,720,658,599,695,479,659" shape="poly">
+            <area target="_blank" alt="" title="Click and Learn CSS" href="https://www.w3schools.com/css/" coords="786,424,815,722,930,752,1051,720,1080,429,1080,422" shape="poly">
+
+
+        </map>
+
+    </div>
+</body>
+</html>

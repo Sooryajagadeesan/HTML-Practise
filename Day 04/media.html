@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Media Elements</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: monospace;
+        }
+        .container {
+            width: 50%;
+            margin: 2% 25%;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML MEDIA TAGS</h1>
+    <hr>
+    <div class="container">
+        <h2>HTML Video Element -The Nature's Scene(no audio)</h2>
+        <video src="./naturevideo.mp4" width="550" height="300" controls>
+            <!-- For alternative videos we can use as many source tags as posiible, 
+                <source src="./naturevideo.mp4" type ="video/mp4"> -->
+        </video><hr>
+        <h2>HTML Audio Element -My Favourite Song</h2>
+        <audio src="./myFavSong.mp3" controls></audio><hr>
+        <h2>Youtube Video -'Nothing is Easy' (Motivation)</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N53RS9DpVms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+</body>
+</html>

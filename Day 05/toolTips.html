@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML ToolTips</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 2% 10%;
+            text-align: center;
+            position: relative;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #hover-me {
+            font-size: 50px;
+            position: absolute;
+            top: 300px;
+            left: 500px;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+        #hover-me:hover ~ #tool-tip-forbutton{
+            visibility: visible;
+            opacity: 1;
+        }
+        #tool-tip-forbutton {
+            position: absolute;
+            top: 245px;
+            left: 500px;
+            font-size: 25px;
+            background-color: rgb(49, 46, 46);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 40px;
+            visibility: hidden; 
+            opacity: 0;
+        }
+        h1 { font-size: 30px;}
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTML Tool Tips</h1>
+        <p>Tool tips are used to display messages when the user hovers on a particular element.</p>
+        <button id="hover-me">Hover Me</button>
+        <span id="tool-tip-forbutton">This a tool tip for this button.</span>
+    </div>
+</body>
+</html>

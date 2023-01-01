@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tabs</title>
+    <style>
+        h1 {
+            font-size: 50px;
+            font-family: monospace;
+        }
+        .container {
+            width: 90%;
+            margin: 2% 5%;
+            /* background-color: chartreuse; */
+            text-align: center;
+        }
+        .tab{
+            width: 70%;
+            margin: 0 15%;
+            background-color: crimson;
+        }
+
+        .tab-links {
+            width: 20%;
+            float: left;
+            height: 50px;
+            border: none;
+            outline: none;
+            background-color: rgb(221, 219, 219);
+            padding: 0;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .tab-links:hover{
+            cursor: pointer;
+            background-color:indigo;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .tab-content {
+            width: 100%;
+            font-size: 50px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: bold;
+            padding: 50px 60px;
+            display: none;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>My Tab Bar</h1>
+        <div class="tab">
+            <button class="tab-links" id ="default-open" onclick = "navBarFunctionality(event,'home')">Home</button>
+            <button class="tab-links"  onclick = "navBarFunctionality(event,'products')">Our Products</button>
+            <button class="tab-links"  onclick = "navBarFunctionality(event,'services')">Our Services</button>
+            <button class="tab-links"  onclick = "navBarFunctionality(event,'aboutUs')">About Us</button>
+            <button class="tab-links"  onclick = "navBarFunctionality(event,'contactUs')">Contact Us</button>
+        </div>
+        <div class="tab-content" id = "home"><p>Wecome to home Section</p></div>
+        <div class="tab-content" id = "products"><p>This is our Products Section</p></div>
+        <div class="tab-content" id = "services"><p>This is our Services Section</p></div>
+        <div class="tab-content" id = "aboutUs"><p>About Us Section</p></div>
+        <div class="tab-content" id = "contactUs"><p>Contact Us Section</p></div>
+    </div>
+
+
+    <script>
+        function navBarFunctionality(e,tabName){
+        var i =0;
+        var tableContent;
+        var tableLinks;
+        tabContent = document.querySelectorAll(".tab-content");
+        tabLinks = document.querySelectorAll(".tab-links");
+        for(i = 0; i<tabContent.length; i++){
+            tabContent[i].style.display ="";
+        }
+        for(i =0;i<tabLinks.length;i++){
+            tabLinks[i].style.backgroundColor = "";
+            tabLinks[i].style.color = "";
+        }
+        document.getElementById(tabName).style.display = "block";
+        e.currentTarget.style.backgroundColor = "rgb(34, 6, 74)";
+        e.currentTarget.style.color = "white";
+
+        }
+        document.getElementById("default-open").click();
+    </script>
+</body>
+</html>
